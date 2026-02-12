@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <title>202006 遊戲 - 套鴨子</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=0" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/source/meta/favicon.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="img/source/meta/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" type="image/png" href="img/source/meta/favicon-16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="img/source/meta/favicon-32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/source/meta/favicon-64.png" sizes="64x64" />
+    <link rel="manifest" href="img/source/meta/manifest.json" />
+    <link rel="stylesheet" href="css/all.css" />
+  </head>
+
+  <body>
+    <!-- 開頭動畫 -->
+    <div class="loading_mask">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <!-- 左欄 -->
+        <div class="header-left">
+          <a href="">
+            <img src="img/source/header/logo-white.svg" alt="icon PChome 24h" />
+          </a>
+        </div>
+        <!-- 右欄 -->
+        <ul class="header-right">
+          <li class="app-download">
+            <span class="divider"></span>
+            APP下載
+            <a href="" class="qrcode-popup">
+              <img src="img/source/header/qrcode.png" alt="QR Code" />
+            </a>
+            <span class="divider"></span>
+          </li>
+          <li class="social-links">
+            <span>追蹤我們：</span>
+            <a href="">
+              <img src="img/source/header/icon-fb-white-fill.svg" alt="icon Facebook" />
+            </a>
+            <a href="">
+              <img src="img/source/header/icon-ig-white-fill.svg" alt="icon Instagram" />
+            </a>
+            <a href="">
+              <img src="img/source/header/icon-yt-white-fill.svg" alt="icon Youtube" />
+            </a>
+            <a href="">
+              <img src="img/source/header/icon-line-white-fill.svg" alt="icon Line" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- END Header -->
+
+    <!-- Main -->
+    <div class="wrap">
+      <div class="game">
+        <div class="ie-mask none">
+          <h3>建議您使用其他瀏覽器或行動裝置，<br />以取得更好的體驗</h3>
+        </div>
+        <!-- 遊戲結束燈箱 -->
+        <div class="pop hide" aria-hidden="true">
+          <div class="pop__inner">
+            <img class="pop__bg" src="img/modal_bg.png" alt="modal background" />
+            <div class="pop__content">
+              <p class="time-up">時間到!</p>
+              <p class="pop-result">
+                小鴨子 玩水玩得很開心 <br />
+                送了謝禮過來~
+              </p>
+              <div class="pop__btns">
+                <a class="pop__link" href="javascript:;"><img src="img/pop_btn1.png" alt="reward" /></a>
+                <a class="pop__replay" href="javascript:;"><img src="img/pop_btn2.png" alt="replay" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 主標 -->
+        <img class="game__title" src="img/title.png" alt="title" />
+        <!-- 葉子 -->
+        <img class="leaf leaf_1" src="img/leaf_1.png" alt="leaf" />
+        <img class="leaf leaf_2" src="img/leaf_2.png" alt="leaf" />
+        <!-- 雲 -->
+        <img class="cloud" src="img/cloud.png" alt="cloud" />
+        <!-- 兩顆按鈕 -->
+        <div class="game__btns">
+          <a class="btn-start" href="javascript:;"><img src="img/bnt_start.png" alt="start" /></a>
+          <a class="btn-instructions" href="javascript:;" data-toggle="modal" data-target="#instructions">
+            <img src="img/btn_instructions.png" alt="instructions" />
+          </a>
+        </div>
+
+        <!-- 畫面頂部 計分版 & 壓力條-->
+        <div class="game__top">
+          <div class="game__top--board">
+            <p></p>
+            <p class="time">30</p>
+            <p class="score">0</p>
+          </div>
+
+          <div class="game__top--bar">
+            <div class="game__top--barinner"></div>
+          </div>
+        </div>
+
+        <!-- 畫面底部 -->
+        <div class="game__footer">
+          <div class="col"><img src="img/footer_text.png" alt="footer" /></div>
+          <a class="col d-block" id="ios" href="javascript:;">
+            <img src="img/ios.png" alt="ios" />
+          </a>
+          <a class="col d-block" id="android" href="javascript:;">
+            <img src="img/android.png" alt="android" />
+          </a>
+        </div>
+
+        <!-- 遊戲內容  湖泊容器 -->
+        <div class="game__main">
+          <img class="page1-duck page1-duck1" src="img/duck1.png" alt="duck" />
+          <img class="page1-duck page1-duck2" src="img/duck2.png" alt="duck" />
+          <img class="page1-duck page1-duck3" src="img/duck3.png" alt="duck" />
+
+          <div class="hand">
+            <img class="hand1" src="img/hand1.png" alt="hand" />
+            <img class="coin1" src="img/coin1.png" alt="coin" />
+            <img class="hand2" src="img/hand2.png" alt="hand" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Main -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">遊戲說明</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>夏天好熱(汗)，來玩水吧!限時內，套到一定數量的鴨子，就能帶走獎勵唷!</li>
+              <li>
+                請長按圈圈區域，放開即可將手中圈圈丟出
+                <img src="img/info.jpg" alt="info" />
+                可以透過蓄力條(上圖)決定丟出圈圈的遠近!<br />
+                *小祕訣 : 當蓄力條在上圖區域時，才有機會套中鴨子唷!
+              </li>
+              <li>
+                注意事項：<br />
+                僅為個人作品示意，已移除獎品相關資訊與連結。
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關 閉</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+  </body>
+</html>

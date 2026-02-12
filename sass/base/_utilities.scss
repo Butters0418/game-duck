@@ -1,0 +1,29 @@
+/* 不顯示滾動條 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.outline * {
+  outline: 1px solid #000;
+}
+
+.pc {
+  @include media($pad) {
+    display: none;
+  }
+}
+
+.mb {
+  display: none;
+
+  @include media($pad) {
+    display: block;
+  }
+}

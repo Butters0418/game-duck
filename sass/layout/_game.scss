@@ -1,0 +1,413 @@
+.wrap {
+  position: relative;
+  display: flex;
+  height: calc(100% - 40px);
+  background-color: $wrapBg;
+  overflow: hidden;
+
+  @include media($pad) {
+    height: 100%;
+  }
+}
+
+.game {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  max-height: 812px;
+  background: linear-gradient(180deg, #39b4ff, #8dcfff 80%);
+  overflow: hidden;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+
+  @include media($pad) {
+    height: 100%;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  @include media($mobile) {
+    box-shadow: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .game {
+    height: 1080px;
+  }
+}
+
+.d-block {
+  display: block;
+}
+
+.pop {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.pop.hide {
+  display: none;
+}
+
+.pop__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pop__content {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop__content p {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.pop__content .time-up {
+  margin-top: 30px;
+}
+
+.pop__content .pop-result {
+  margin-bottom: 30px;
+}
+
+.pop__bg {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.pop__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop__btns > a {
+  display: block;
+  padding: 0 5px;
+}
+
+.pop__btns .pop__replay.only {
+  max-width: 220px;
+}
+
+.game__title {
+  position: relative;
+  z-index: 20;
+  display: block;
+  margin: 0 auto;
+}
+
+@include media($mobile) {
+  .game__title {
+    height: 37vh;
+  }
+}
+
+.game__btns {
+  margin-top: -15px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 18;
+}
+
+.game__btns > .btn-start {
+  padding: 0 5px;
+}
+
+.game__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  padding: 20px 20px 10px;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  background-image: url("../img/game_footer.png");
+  background-size: cover;
+}
+
+.game__footer .col {
+  padding: 0 5px;
+}
+
+.game__main {
+  width: 100%;
+  height: 60%;
+  background-image: url("../img/game_bg.png");
+  background-position: center -70%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+@include media($mobile) {
+  .game__main {
+    height: 400px;
+  }
+}
+
+.leaf {
+  position: absolute;
+  z-index: 15;
+  bottom: 5%;
+  width: 26%;
+  pointer-events: none;
+}
+
+.leaf.leaf_1 {
+  left: 0;
+  transform-origin: left bottom;
+}
+
+.leaf.leaf_2 {
+  right: 0;
+  transform-origin: right bottom;
+}
+
+.cloud {
+  pointer-events: none;
+  position: absolute;
+  bottom: 150px;
+  left: 0;
+}
+
+@include media($mobile) {
+  .cloud {
+    bottom: 100px;
+  }
+}
+
+.page1-duck {
+  position: absolute;
+  z-index: 4;
+}
+
+.page1-duck.page1-duck1 {
+  left: 10%;
+  width: 30%;
+  bottom: 15%;
+  z-index: 12;
+  animation: pageDuck1 6s infinite linear;
+}
+
+.page1-duck.page1-duck2 {
+  left: 50%;
+  width: 25%;
+  bottom: 25%;
+  z-index: 11;
+  transform: scaleX(-1);
+  animation: pageDuck2 8s infinite linear;
+}
+
+.page1-duck.page1-duck3 {
+  left: 30%;
+  width: 20%;
+  bottom: 35%;
+  z-index: 10;
+  animation: pageDuck1 5s -2s infinite linear;
+}
+
+@keyframes pageDuck1 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
+  51% {
+    transform: translateX(200%) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0%) scaleX(-1);
+  }
+}
+
+@keyframes pageDuck2 {
+  0% {
+    transform: translateX(0%) scaleX(-1);
+  }
+  50% {
+    transform: translateX(-200%) scaleX(-1);
+  }
+  51% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.game__top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.game__top--board {
+  padding: 10px 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("../img/board_bg.png");
+  background-position: top center;
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+@include media($mobile) {
+  .game__top--board {
+    padding: 5px 20px 20px;
+  }
+}
+
+.game__top--board p {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 3rem;
+  text-align: center;
+}
+
+@include media($mobile) {
+  .game__top--board p {
+    font-size: 1.5rem;
+  }
+}
+
+.game__top--board p.time {
+  font-size: 2rem;
+}
+
+.game__top--board p.score {
+  text-align: right;
+}
+
+.game__top--bar {
+  width: 80%;
+  margin: 20px auto 0;
+  height: 50px;
+  background: linear-gradient(90deg, #43abff, #7ddb49, #fffb56, #ff1510);
+  border-radius: 100px;
+  border: 3px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+@include media($mobile) {
+  .game__top--bar {
+    margin-top: 10px;
+    height: 40px;
+  }
+}
+
+.game__top--barinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background: #2491d4;
+  background-position: left center;
+  background-size: 100%;
+}
+
+.hand {
+  position: absolute;
+  bottom: -5%;
+  left: 40%;
+  transform-origin: right bottom;
+  z-index: 40;
+  width: 30%;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.hand .hand1 {
+  position: relative;
+  z-index: 50;
+}
+
+.hand .hand2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+}
+
+.hand .coin1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 45;
+}
+
+.coin2 {
+  position: absolute;
+  bottom: 10%;
+  left: 40%;
+  z-index: 38;
+}
+
+.duck {
+  position: absolute;
+  z-index: 20;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  pointer-events: none;
+}
+
+.duck.duck1 {
+  background-image: url("../img/duck1.png");
+}
+
+.duck.duck2 {
+  background-image: url("../img/duck2.png");
+}
+
+.duck.duck3 {
+  background-image: url("../img/duck3.png");
+}
+
+.duck.right {
+  transform: scaleX(-1);
+}
+
+.ie-mask {
+  display: none;
+}
