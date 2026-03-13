@@ -17,6 +17,15 @@
       this.data.userEvent = this.data.isMobile ? "touchstart" : "click";
     },
 
+    // 先載鴨子套中圖，避免第一次出現時閃白
+    preloadImages() {
+      const imagesToPreload = ["img/duck1_hitted.png", "img/duck2_hitted.png", "img/duck3_hitted.png"];
+      imagesToPreload.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    },
+
     // 圖片載入與 mask
     handleLoading() {
       const loadingMask = document.querySelector(".loading_mask");
@@ -105,6 +114,7 @@
 
     init() {
       this.detectDevice();
+      this.preloadImages();
       this.preventTouchMove();
       this.handleLoading();
     },
